@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RE DEVELOPMENT - Professional Development Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-loader">
+        <div class="loader"></div>
+    </div>
+    <header>
+        <nav>
+            <div class="logo">
+                RE <span class="logo-development">
+                    <span class="orbit-container">
+                        <span class="orbit-path">
+                            <span class="arrow">➜</span>
+                        </span>
+                    </span>
+                    <span class="text">DEVELOPMENT</span>
+                </span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="theme-switcher">
+                <div class="theme-toggle">
+                    <i class="fas fa-palette"></i>
+                    <span>Theme</span>
+                </div>
+                <div class="theme-dropdown">
+                    <div class="theme-option" data-theme="default">
+                        <span class="color-preview default"></span>
+                        <span>Default</span>
+                    </div>
+                    <div class="theme-option" data-theme="dark">
+                        <span class="color-preview dark"></span>
+                        <span>Dark</span>
+                    </div>
+                    <div class="theme-option" data-theme="light">
+                        <span class="color-preview light"></span>
+                        <span>Light</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Building Digital <span class="highlight">Excellence</span></h1>
+            <p>Transform your ideas into reality with our expert development services</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="cta-button">Get Started</a>
+                <a href="#services" class="secondary-button">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="number">100+</span>
+                <span class="label">Projects</span>
+            </div>
+            <div class="stat">
+                <span class="number">50+</span>
+                <span class="label">Clients</span>
+            </div>
+            <div class="stat">
+                <span class="number">5+</span>
+                <span class="label">Years</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Custom websites built with the latest technologies</p>
+                <ul class="service-features">
+                    <li>Responsive Design</li>
+                    <li>SEO Optimization</li>
+                    <li>Performance Focus</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Apps</h3>
+                <p>Native and cross-platform mobile applications</p>
+                <ul class="service-features">
+                    <li>iOS & Android</li>
+                    <li>React Native</li>
+                    <li>Flutter</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Design</h3>
+                <p>User-centered design solutions</p>
+                <ul class="service-features">
+                    <li>User Research</li>
+                    <li>Wireframing</li>
+                    <li>Prototyping</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Software Development</h3>
+                <p>Custom software solutions for your business</p>
+                <ul class="service-features">
+                    <li>Desktop Applications</li>
+                    <li>Custom Solutions</li>
+                    <li>System Integration</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Our Work</h2>
+        <div class="portfolio-container">
+            <!-- Projects will be loaded here dynamically -->
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="section-header">
+            <h2>Our Projects</h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="projects-container">
+            <!-- Projects will be loaded here dynamically -->
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>Ready to start your project? Contact us today!</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@redevelopment.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Tech Street, Digital City</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Name" required>
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Message" required></textarea>
+                    <i class="fas fa-comment"></i>
+                </div>
+                <button type="submit" class="submit-button">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>RE DEVELOPMENT</h3>
+                <p>Building the future of digital solutions</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 RE DEVELOPMENT. All rights reserved. <span class="admin-trigger">.</span></p>
+            <a href="/admin.html" class="hidden-admin-link" aria-hidden="true">Admin</a>
+        </div>
+    </footer>
+
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Scroll Progress Indicator
+        const scrollProgress = document.createElement('div');
+        scrollProgress.className = 'scroll-progress';
+        document.body.appendChild(scrollProgress);
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = window.scrollY / windowHeight;
+            scrollProgress.style.transform = `scaleX(${progress})`;
+        });
+
+        // Page Loading Animation
+        window.addEventListener('load', () => {
+            const loader = document.querySelector('.page-loader');
+            if (loader) {
+                loader.style.opacity = '0';
+                setTimeout(() => loader.remove(), 500);
+            }
+        });
+
+        // Smooth Scroll for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Interactive Service Cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+            });
+        });
+
+        // Form Validation and Loading State
+        const form = document.querySelector('.contact-form');
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const inputs = form.querySelectorAll('input, textarea');
+                let isValid = true;
+                
+                inputs.forEach(input => {
+                    if (!input.value) {
+                        isValid = false;
+                        input.style.animation = 'shake 0.5s ease';
+                        setTimeout(() => input.style.animation = '', 500);
+                    }
+                });
+                
+                if (isValid) {
+                    const button = form.querySelector('.submit-button');
+                    button.classList.add('loading');
+                    
+                    // Simulate form submission
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    
+                    button.classList.remove('loading');
+                    // Add success message or redirect
+                }
+            });
+        }
+
+        // Intersection Observer for Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.service-card, .portfolio-item, .stat').forEach(el => {
+            el.classList.add('scroll-animate');
+            observer.observe(el);
+        });
+
+        // Stats Counter Animation
+        const stats = document.querySelectorAll('.stat .number');
+        stats.forEach(stat => {
+            const value = parseInt(stat.textContent);
+            stat.setAttribute('data-value', value);
+            stat.textContent = '0';
+            
+            observer.observe(stat);
+        });
+
+        // Parallax Effect for Hero Section
+        document.addEventListener('mousemove', (e) => {
+            const hero = document.querySelector('.hero-content');
+            if (hero) {
+                const mouseX = e.clientX / window.innerWidth - 0.5;
+                const mouseY = e.clientY / window.innerHeight - 0.5;
+                hero.style.transform = `translate(${mouseX * 20}px, ${mouseY * 20}px)`;
+            }
+        });
+
+        // Cursor effect
+        const cursor = document.createElement('div');
+        cursor.className = 'cursor';
+        document.body.appendChild(cursor);
+
+        const cursorDot = document.createElement('div');
+        cursorDot.className = 'cursor-dot';
+        document.body.appendChild(cursorDot);
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            cursorDot.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+
+        // Add hover effect for clickable elements
+        document.querySelectorAll('a, button, .service-card, .portfolio-item').forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+        });
+
+        // Add this function to your JavaScript
+        function showNotification(message, type = 'success') {
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                <span>${message}</span>
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 3000);
+        }
+
+        const heroText = document.querySelector('.hero-content h1');
+        const text = heroText.textContent;
+        heroText.innerHTML = '';
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                heroText.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeText, 100);
+            }
+        }
+
+        // Start typing when the page loads
+        window.addEventListener('load', typeText);
+
+        // Add to your JavaScript
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax');
+            
+            parallaxElements.forEach(el => {
+                const speed = el.dataset.speed || 0.5;
+                el.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        document.querySelectorAll('.theme-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const theme = option.dataset.theme;
+                document.querySelectorAll('.theme-option').forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+                
+                // Show notification
+                showNotification(`Theme changed to ${theme}`, 'success');
+            });
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'default';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.querySelector(`[data-theme="${savedTheme}"]`)?.classList.add('active');
+
+        // Hidden Admin Link
+        let clickCount = 0;
+        let clickTimer;
+
+        document.querySelector('.admin-trigger').addEventListener('click', (e) => {
+            e.stopPropagation();
+            clickCount++;
+            
+            clearTimeout(clickTimer);
+            clickTimer = setTimeout(() => {
+                clickCount = 0;
+            }, 2000);
+
+            if (clickCount === 3) {
+                document.querySelector('.hidden-admin-link').classList.add('visible');
+                setTimeout(() => {
+                    document.querySelector('.hidden-admin-link').classList.remove('visible');
+                    clickCount = 0;
+                }, 3000);
+            }
+        });
+
+        async function loadProjects() {
+            try {
+                const response = await fetch('/api/projects');
+                if (!response.ok) {
+                    throw new Error('Failed to load projects');
+                }
+                const projects = await response.json();
+                console.log('Loaded projects:', projects);
+                displayPortfolioProjects(projects);
+            } catch (error) {
+                console.error('Error loading projects:', error);
+            }
+        }
+
+        function displayPortfolioProjects(projects) {
+            const portfolioContainer = document.querySelector('.portfolio-container');
+            if (!portfolioContainer) return;
+
+            // Take only the first 3 projects
+            const displayedProjects = projects.slice(0, 3);
+
+            // Fill remaining slots with placeholder projects if less than 3 projects
+            while (displayedProjects.length < 3) {
+                displayedProjects.push({
+                    title: `Project ${displayedProjects.length + 1}`,
+                    category: 'Coming Soon',
+                    images: ['https://via.placeholder.com/400x300']
+                });
+            }
+
+            portfolioContainer.innerHTML = displayedProjects.map(project => {
+                // Convert category values to display names
+                const categoryDisplay = {
+                    'software': 'Software Development',
+                    'web': 'Web Development',
+                    'mobile': 'Mobile App',
+                    'design': 'UI/UX Design'
+                }[project.category] || project.category;
+
+                return `
+                    <div class="portfolio-item">
+                        <img src="${project.images && project.images.length > 0 ? project.images[0] : 'https://via.placeholder.com/400x300'}" 
+                             alt="${project.title}"
+                             onerror="this.src='https://via.placeholder.com/400x300'">
+                        <div class="portfolio-overlay">
+                            <h3>${project.title}</h3>
+                            <p>${categoryDisplay}</p>
+                            <a href="/project-details.html?id=${project.id}" class="portfolio-link">View Project</a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Remove the projects section if you don't want it
+        document.querySelector('#projects')?.remove();
+
+        // Load projects when the page loads
+        document.addEventListener('DOMContentLoaded', loadProjects);
+    </script>
+</body>
+</html> 

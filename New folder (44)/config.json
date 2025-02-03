@@ -1,0 +1,21 @@
+{
+    "checker": {
+        "threads": 100,
+        "timeout": 10,
+        "retry_attempts": 3,
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "combo_list": "combos.txt"
+    },
+    "proxy": {
+        "use_proxy": true,
+        "proxy_type": "socks5",
+        "proxy_list": "proxies.txt",
+        "proxy_timeout": 5
+    },
+    "output": {
+        "save_valid": true,
+        "save_invalid": false,
+        "output_folder": "results",
+        "log_level": "info"
+    }
+} 

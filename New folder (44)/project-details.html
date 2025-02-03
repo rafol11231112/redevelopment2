@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - RE DEVELOPMENT</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-details.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                RE <span class="logo-development">
+                    <span class="orbit-container">
+                        <span class="orbit-path">
+                            <span class="arrow">➜</span>
+                        </span>
+                    </span>
+                    <span class="text">DEVELOPMENT</span>
+                </span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/#portfolio">Portfolio</a></li>
+                <li><a href="/#contact">Contact</a></li>
+            </ul>
+            <div class="theme-switcher">
+                <div class="theme-toggle">
+                    <i class="fas fa-palette"></i>
+                    <span>Theme</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="project-details-container">
+        <div class="project-header">
+            <h1 id="projectTitle">Project Title</h1>
+            <p id="projectCategory">Category</p>
+        </div>
+
+        <div class="project-gallery">
+            <div class="main-image">
+                <img id="mainImage" src="" alt="Main Project Image">
+            </div>
+            <div class="image-thumbnails" id="imageThumbnails">
+                <!-- Thumbnails will be loaded here -->
+            </div>
+        </div>
+
+        <div class="project-info">
+            <div class="project-description">
+                <h2>About the Project</h2>
+                <p id="projectDescription">Project description will be loaded here.</p>
+            </div>
+
+            <div class="project-details">
+                <div class="detail-item">
+                    <i class="fas fa-calendar"></i>
+                    <span id="projectDate">Date</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-tag"></i>
+                    <span id="projectTechnology">Technology</span>
+                </div>
+                <div class="detail-item">
+                    <i class="fas fa-link"></i>
+                    <a id="projectLink" href="#" target="_blank">View Live</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function loadProjectDetails() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const projectId = urlParams.get('id');
+                
+                console.log('Loading project with ID:', projectId); // Debug log
+
+                if (!projectId) {
+                    window.location.href = '/';
+                    return;
+                }
+
+                const response = await fetch(`/api/projects/${projectId}`);
+                console.log('Response status:', response.status); // Debug log
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load project');
+                }
+                
+                const project = await response.json();
+                console.log('Loaded project:', project); // Debug log
+                
+                if (!project) {
+                    throw new Error('Project not found');
+                }
+
+                displayProjectDetails(project);
+            } catch (error) {
+                console.error('Error loading project:', error);
+                document.querySelector('.project-details-container').innerHTML = `
+                    <div class="error-message">
+                        <h2>Error Loading Project</h2>
+                        <p>${error.message}</p>
+                        <a href="/" class="back-link">Back to Home</a>
+                    </div>
+                `;
+            }
+        }
+
+        function displayProjectDetails(project) {
+            console.log('Displaying project:', project); // Debug log
+
+            // Set title and metadata
+            document.title = `${project.title} - RE DEVELOPMENT`;
+            document.getElementById('projectTitle').textContent = project.title;
+            
+            // Convert category value to display name
+            const categoryDisplay = {
+                'software': 'Software Development',
+                'web': 'Web Development',
+                'mobile': 'Mobile App',
+                'design': 'UI/UX Design'
+            }[project.category] || project.category;
+            
+            document.getElementById('projectCategory').textContent = categoryDisplay;
+            
+            // Set description
+            const description = project.detailedDescription || project.description;
+            document.getElementById('projectDescription').textContent = description;
+            
+            // Set date and technology
+            document.getElementById('projectDate').textContent = new Date(project.date).toLocaleDateString();
+            document.getElementById('projectTechnology').textContent = project.technology || project.category;
+            
+            // Handle project link
+            const linkElement = document.getElementById('projectLink');
+            if (project.link) {
+                linkElement.href = project.link;
+                linkElement.textContent = 'View Live Project';
+                linkElement.parentElement.style.display = 'block';
+            } else {
+                linkElement.parentElement.style.display = 'none';
+            }
+
+            // Handle images
+            const mainImage = document.getElementById('mainImage');
+            const thumbnailsContainer = document.getElementById('imageThumbnails');
+            
+            if (project.images && project.images.length > 0) {
+                console.log('Project images:', project.images); // Debug log
+                
+                // Set main image
+                mainImage.src = project.images[0];
+                mainImage.onerror = (e) => {
+                    console.error('Error loading image:', e.target.src);
+                    e.target.src = 'https://via.placeholder.com/800x400';
+                };
+                
+                // Set thumbnails
+                thumbnailsContainer.innerHTML = project.images.map((img, index) => `
+                    <div class="thumbnail">
+                        <img src="${img}" 
+                             alt="Project Image ${index + 1}" 
+                             onclick="setMainImage('${img}')"
+                             onerror="this.src='https://via.placeholder.com/200x200'">
+                    </div>
+                `).join('');
+
+                // Verify images are loading
+                project.images.forEach(img => {
+                    const testImg = new Image();
+                    testImg.onload = () => console.log('Image loaded successfully:', img);
+                    testImg.onerror = () => console.error('Failed to load image:', img);
+                    testImg.src = img;
+                });
+            } else {
+                console.log('No images found, using placeholder');
+                mainImage.src = 'https://via.placeholder.com/800x400';
+                thumbnailsContainer.innerHTML = '';
+            }
+        }
+
+        function setMainImage(src) {
+            const mainImage = document.getElementById('mainImage');
+            console.log('Setting main image:', src); // Debug log
+            mainImage.src = src;
+            mainImage.onerror = () => {
+                console.log('Error loading main image, using placeholder');
+                mainImage.src = 'https://via.placeholder.com/800x400';
+            };
+        }
+
+        // Load project details when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Page loaded, loading project details...'); // Debug log
+            loadProjectDetails();
+        });
+    </script>
+</body>
+</html> 
